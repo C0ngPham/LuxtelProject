@@ -46,7 +46,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/customer', 'HomeController@customer')->name('customer');
+Route::get('/book', 'HomeController@book')->name('book');
+Route::get('/room', 'HomeController@room')->name('room');
+
 
 Route::get('booking', 'HomeController@index');
 
 Route::post('booking', 'HomeController@booking');
+Route::post('payment', 'HomeController@payment');

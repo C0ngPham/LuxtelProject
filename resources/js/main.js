@@ -1,11 +1,11 @@
-(function($) {
+(function ($) {
     "use strict";
 
     // bootstrap dropdown hover
 
     // loader
-    var loader = function() {
-        setTimeout(function() {
+    var loader = function () {
+        setTimeout(function () {
             if ($("#loader").length > 0) {
                 $("#loader").removeClass("show");
             }
@@ -17,13 +17,13 @@
     $(window).stellar();
 
     $("nav .dropdown").hover(
-        function() {
+        function () {
             var $this = $(this);
             $this.addClass("show");
             $this.find("> a").attr("aria-expanded", true);
             $this.find(".dropdown-menu").addClass("show");
         },
-        function() {
+        function () {
             var $this = $(this);
             $this.removeClass("show");
             $this.find("> a").attr("aria-expanded", false);
@@ -31,7 +31,7 @@
         }
     );
 
-    $("#dropdown04").on("show.bs.dropdown", function() {
+    $("#dropdown04").on("show.bs.dropdown", function () {
         console.log("show");
     });
 
@@ -47,22 +47,22 @@
         items: 1,
         navText: [
             "<span class='ion-chevron-left'></span>",
-            "<span class='ion-chevron-right'></span>"
+            "<span class='ion-chevron-right'></span>",
         ],
         responsive: {
             0: {
                 items: 1,
-                nav: false
+                nav: false,
             },
             600: {
                 items: 1,
-                nav: false
+                nav: false,
             },
             1000: {
                 items: 1,
-                nav: true
-            }
-        }
+                nav: true,
+            },
+        },
     });
 
     // owl carousel
@@ -81,27 +81,27 @@
         responsive: {
             0: {
                 items: 1,
-                nav: false
+                nav: false,
             },
             600: {
                 items: 2,
-                nav: false
+                nav: false,
             },
             1000: {
                 items: 3,
                 nav: true,
-                loop: false
-            }
-        }
+                loop: false,
+            },
+        },
     });
 
     // cusotm owl navigation events
-    $(".custom-next").click(function(event) {
+    $(".custom-next").click(function (event) {
         event.preventDefault();
         // majorCarousel.trigger('owl.next');
         majorCarousel.trigger("next.owl.carousel");
     });
-    $(".custom-prev").click(function(event) {
+    $(".custom-prev").click(function (event) {
         event.preventDefault();
         // majorCarousel.trigger('owl.prev');
         majorCarousel.trigger("prev.owl.carousel");
@@ -121,29 +121,29 @@
         items: 4,
         navText: [
             "<span class='ion-chevron-left'></span>",
-            "<span class='ion-chevron-right'></span>"
+            "<span class='ion-chevron-right'></span>",
         ],
         responsive: {
             0: {
                 items: 1,
-                nav: false
+                nav: false,
             },
             600: {
                 items: 3,
-                nav: false
+                nav: false,
             },
             1000: {
                 items: 4,
                 nav: true,
-                loop: false
-            }
-        }
+                loop: false,
+            },
+        },
     });
 
-    var contentWayPoint = function() {
+    var contentWayPoint = function () {
         var i = 0;
         $(".element-animate").waypoint(
-            function(direction) {
+            function (direction) {
                 if (
                     direction === "down" &&
                     !$(this.element).hasClass("element-animated")
@@ -151,12 +151,12 @@
                     i++;
 
                     $(this.element).addClass("item-animate");
-                    setTimeout(function() {
-                        $("body.element-animate.item-animate").each(function(
+                    setTimeout(function () {
+                        $("body.element-animate.item-animate").each(function (
                             k
                         ) {
                             var el = $(this);
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 var effect = el.data("animate-effect");
                                 if (effect === "fadeIn") {
                                     el.addClass("fadeIn element-animated");
